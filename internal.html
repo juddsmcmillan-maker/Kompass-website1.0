@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kompass – Internal PDFs</title>
+  <meta name="robots" content="noindex, nofollow" />
+
+  <!-- Re-use existing site styling if present -->
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/styles.css" />
+
+  <style>
+    :root{
+      --bg: #0b1220;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.10);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.70);
+      --accent: #4f8cff;
+      --border: rgba(255,255,255,.12);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+    }
+
+    body{
+      margin:0;
+      min-height:100vh;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(79,140,255,.22), transparent 55%),
+                  radial-gradient(900px 500px at 90% 70%, rgba(140,79,255,.16), transparent 60%),
+                  var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+    }
+
+    .wrap{ width:min(1100px, 94vw); margin: 0 auto; padding: 28px 0 44px; }
+
+    .header{
+      display:flex;
+      align-items:flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    h1{ margin: 0 0 6px; font-size: 26px; }
+    p{ margin: 0; color: var(--muted); line-height: 1.5; }
+
+    .actions{ display:flex; gap: 10px; align-items:center; flex-wrap: wrap; justify-content:flex-end; }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.12);
+      color: rgba(255,255,255,.86);
+      text-decoration:none;
+      font-size: 13px;
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{ background: rgba(255,255,255,.06); }
+
+    .btnPrimary{
+      border-color: rgba(79,140,255,.35);
+      background: rgba(79,140,255,.15);
+    }
+
+    .bar{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 16px 0 14px;
+      flex-wrap: wrap;
+    }
+
+    .search{
+      flex: 1;
+      min-width: 240px;
+      display:flex;
+      gap: 10px;
+      align-items:center;
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: rgba(0,0,0,.20);
+      border: 1px solid rgba(255,255,255,.16);
+      box-shadow: 0 0 0 0 rgba(79,140,255,.0);
+    }
+
+    .search:focus-within{
+      border-color: rgba(79,140,255,.6);
+      box-shadow: 0 0 0 4px rgba(79,140,255,.16);
+    }
+
+    .search input{
+      width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 14px;
+    }
+
+    .count{ color: rgba(255,255,255,.75); font-size: 13px; }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    @media (max-width: 980px){ .grid{ grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px){ .grid{ grid-template-columns: 1fr; } }
+
+    .card{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .cardTop{ padding: 14px 14px 10px; border-bottom: 1px solid rgba(255,255,255,.08); }
+    .title{ font-weight: 750; margin: 0 0 6px; font-size: 14px; line-height: 1.25; }
+    .meta{ margin: 0; color: rgba(255,255,255,.66); font-size: 12px; }
+
+    .cardBottom{ padding: 12px 14px 14px; display:flex; gap: 10px; flex-wrap: wrap; }
+
+    .pill{
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.14);
+      color: rgba(255,255,255,.88);
+      text-decoration:none;
+      font-size: 13px;
+    }
+    .pill:hover{ background: rgba(255,255,255,.06); }
+
+    .pillPrimary{
+      border-color: rgba(79,140,255,.35);
+      background: linear-gradient(180deg, rgba(79,140,255,.92), rgba(79,140,255,.72));
+      color: white;
+      font-weight: 700;
+    }
+
+    .empty{
+      margin-top: 22px;
+      padding: 18px;
+      border-radius: var(--radius);
+      border: 1px dashed rgba(255,255,255,.20);
+      color: rgba(255,255,255,.78);
+      background: rgba(0,0,0,.12);
+    }
+
+    code{ color: rgba(255,255,255,.9); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div>
+        <h1>Internal PDFs</h1>
+        <p>All PDFs available in the site folder. Use search to filter.</p>
+      </div>
+      <div class="actions">
+        <a class="btn" href="/index.html">Back to website</a>
+        <a class="btn btnPrimary" href="/password.html">Lock screen</a>
+      </div>
+    </div>
+
+    <div class="bar">
+      <div class="search" aria-label="Search PDFs">
+        <span style="opacity:.8; font-size:13px;">Search</span>
+        <input id="q" type="text" placeholder="Type to filter (e.g., Entgelt, Aufnahme, Konzept…)" />
+      </div>
+      <div class="count" id="count"></div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div class="empty" id="empty" style="display:none;">
+      No PDFs found. Make sure your PDF files are uploaded to the site root (same level as <code>index.html</code>), then redeploy.
+    </div>
+
+  </div>
+
+  <script>
+    // List of PDFs (all PDFs you provided)
+    // If you add more PDFs later, just add them here.
+    const PDFS = [
+      { file: "Aufnahmebogen_ab_10_23.pdf", label: "Aufnahmebogen (ab 10/2023)" },
+      { file: "01-traegerinfo-fuer-kue-an-ja.pdf", label: "01 Trägerinfo für KÜ an JA" },
+      { file: "02 Konzeption gGmbH-Stand 27.09.2023.pdf", label: "02 Konzeption gGmbH (Stand 27.09.2023)" },
+      { file: "03 Leistungsbeschreibung gGmbH Stand 21.07.2023.pdf", label: "03 Leistungsbeschreibung gGmbH (Stand 21.07.2023)" },
+      { file: "04 Betriebserlaubnis ab 26.10.2023.pdf", label: "04 Betriebserlaubnis (ab 26.10.2023)" },
+      { file: "05-geschaeftsanweisung-2020-1.pdf", label: "05 Geschäftsanweisung 2020-1" },
+      { file: "06 Entgeltvereinbarung ab 05.2025 bis 03.2026.pdf", label: "06 Entgeltvereinbarung (05/2025–03/2026)" },
+      { file: "07 Gewaltschutzkonzept Kompass Stand- 27.09.2023.pdf", label: "07 Gewaltschutzkonzept Kompass (Stand 27.09.2023)" },
+      { file: "08-entgeltvereinbarung-ks-fls-nichtschueler.pdf", label: "08 Entgeltvereinbarung KS FLS Nichtschüler" },
+      { file: "09 Entgeltvereinbarung KS Nachsorge.pdf", label: "09 Entgeltvereinbarung KS Nachsorge" },
+    ];
+
+    // If your PDFs are stored in a folder (e.g. /assets/pdfs/), set PDF_BASE to that.
+    // Example: const PDF_BASE = "/assets/pdfs/";
+    const PDF_BASE = "/";
+
+    const grid = document.getElementById('grid');
+    const q = document.getElementById('q');
+    const count = document.getElementById('count');
+    const empty = document.getElementById('empty');
+
+    function escapeHtml(s){
+      return (s||"")
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'",'&#039;');
+    }
+
+    function render(list){
+      grid.innerHTML = "";
+      if (!list.length){
+        empty.style.display = 'block';
+        count.textContent = "0 PDFs";
+        return;
+      }
+      empty.style.display = 'none';
+      count.textContent = `${list.length} PDF${list.length===1?'':'s'}`;
+
+      const cards = list.map(p => {
+        const url = PDF_BASE + encodeURIComponent(p.file);
+        const title = escapeHtml(p.label || p.file);
+        const meta = escapeHtml(p.file);
+        return `
+          <div class="card" data-file="${escapeHtml(p.file)}">
+            <div class="cardTop">
+              <div class="title">${title}</div>
+              <p class="meta">${meta}</p>
+            </div>
+            <div class="cardBottom">
+              <a class="pill pillPrimary" href="${url}" target="_blank" rel="noopener">Open</a>
+              <a class="pill" href="${url}" download>Download</a>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      grid.insertAdjacentHTML('beforeend', cards);
+    }
+
+    function filter(){
+      const term = (q.value || "").trim().toLowerCase();
+      if (!term){
+        render(PDFS);
+        return;
+      }
+      const filtered = PDFS.filter(p =>
+        (p.label || "").toLowerCase().includes(term) ||
+        (p.file || "").toLowerCase().includes(term)
+      );
+      render(filtered);
+    }
+
+    q.addEventListener('input', filter);
+
+    // initial
+    render(PDFS);
+  </script>
+</body>
+</html>
