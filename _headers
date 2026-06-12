@@ -1,0 +1,7 @@
+# Optional Netlify Basic Auth. This protects the page and direct PDF URLs on Netlify.
+# Username: jugendamt
+# Password: kompass-intern
+/jugendaemter.html
+  Basic-Auth: jugendamt:kompass-intern
+/*.pdf
+  Basic-Auth: jugendamt:kompass-intern

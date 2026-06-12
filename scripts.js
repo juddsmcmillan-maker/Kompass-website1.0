@@ -39,3 +39,26 @@ if ('IntersectionObserver' in window) {
   });
   if(fallback){ fallback.classList.add('active'); }
 })();
+
+// --- Simple client-side gate for /jugendaemter.html ---
+// Change this password before deployment if needed. Real protection for PDFs
+// should be handled by Netlify/Cloudflare access rules.
+(function(){
+  var gate = document.getElementById('accessGate');
+  var content = document.getElementById('protectedContent');
+  if(!gate || !content) return;
+  var PASSWORD = 'kompass-intern';
+  var key = 'kompassJugendaemterAccess';
+  function unlock(){ gate.style.display='none'; content.classList.remove('locked'); sessionStorage.setItem(key,'ok'); }
+  if(sessionStorage.getItem(key)==='ok') unlock();
+  var form = document.getElementById('passwordForm');
+  var input = document.getElementById('passwordInput');
+  var error = document.getElementById('passwordError');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if((input.value || '').trim() === PASSWORD){ unlock(); }
+      else if(error){ error.style.display='block'; }
+    });
+  }
+})();

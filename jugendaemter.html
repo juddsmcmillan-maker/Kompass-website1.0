@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Poppins:wght@600;700&amp;display=swap" rel="stylesheet"/>
 <!-- Main stylesheet -->
 <link href="/style.css" rel="stylesheet"/></head>
-<body>
+<body class="protected-page">
 <div class="layout">
 <aside class="sidebar">
 <div class="brand">
 <div class="brand-logo">
-<img alt="KOMPASS" onerror="this.style.display='none'" src="assets/logo.jpg"/>
+<img alt="KOMPASS" src="/assets/logo.jpg"/>
 </div>
 <div>
 <div class="brand-name">KOMPASS gGmbH</div>
@@ -43,7 +43,16 @@
 <p class="hero-sub">Informationen für fallführende Fachkräfte: Aufnahmewege, Unterlagen und Kontakt.</p>
 </div>
 </header>
-<div class="page">
+<div class="protected-gate" id="accessGate">
+<div class="kicker">Geschützter Bereich</div>
+<h2>Zugang für Jugendämter</h2>
+<p>Bitte Passwort eingeben, um die internen Unterlagen und PDFs anzuzeigen.</p>
+<form id="passwordForm">
+<input autocomplete="current-password" id="passwordInput" placeholder="Passwort" type="password"/>
+<button class="btn primary" type="submit">Unterlagen anzeigen</button>
+<p class="error" id="passwordError">Das Passwort ist nicht korrekt.</p>
+</form>
+</div><div class="page protected-content locked" id="protectedContent">
 <section class="section visible">
 <div class="kicker">Übersicht</div>
 <h2>So arbeiten wir mit Jugendämtern zusammen</h2>
@@ -78,12 +87,12 @@
             – öffentlich oder nur intern.
           </div>
 </section>
-</div>
+<section class="section visible" id="pdfUnterlagen"><div class="kicker">PDF-Unterlagen</div><h2>Downloads für Jugendämter</h2><p>Alle vorhandenen Unterlagen sind hier gesammelt.</p><div class="pdf-list"><a href="/01-traegerinfo-fuer-kue-an-ja.pdf" rel="noopener" target="_blank">01-traegerinfo-fuer-kue-an-ja.pdf</a><a href="/02%20Konzeption%20gGmbH-Stand%2027.09.2023.pdf" rel="noopener" target="_blank">02 Konzeption gGmbH-Stand 27.09.2023.pdf</a><a href="/03%20Leistungsbeschreibung%20gGmbH%20Stand%2021.07.2023.pdf" rel="noopener" target="_blank">03 Leistungsbeschreibung gGmbH Stand 21.07.2023.pdf</a><a href="/04%20Betriebserlaubnis%20ab%2026.10.2023.pdf" rel="noopener" target="_blank">04 Betriebserlaubnis ab 26.10.2023.pdf</a><a href="/05-geschaeftsanweisung-2020-1.pdf" rel="noopener" target="_blank">05-geschaeftsanweisung-2020-1.pdf</a><a href="/06%20Entgeltvereinbarung%20ab%2005.2025%20bis%2003.2026.pdf" rel="noopener" target="_blank">06 Entgeltvereinbarung ab 05.2025 bis 03.2026.pdf</a><a href="/07%20Gewaltschutzkonzept%20Kompass%20Stand-%2027.09.2023.pdf" rel="noopener" target="_blank">07 Gewaltschutzkonzept Kompass Stand- 27.09.2023.pdf</a><a href="/08-entgeltvereinbarung-ks-fls-nichtschueler.pdf" rel="noopener" target="_blank">08-entgeltvereinbarung-ks-fls-nichtschueler.pdf</a><a href="/09%20Entgeltvereinbarung%20KS%20Nachsorge.pdf" rel="noopener" target="_blank">09 Entgeltvereinbarung KS Nachsorge.pdf</a><a href="/Aufnahmebogen_ab_10_23.pdf" rel="noopener" target="_blank">Aufnahmebogen_ab_10_23.pdf</a></div></section></div>
 <footer class="footer">
 <div class="footer-inner">
 <div class="footer-left">
 <div class="footer-logo">
-<img alt="KOMPASS" onerror="this.style.display='none'" src="assets/logo.jpg"/>
+<img alt="KOMPASS" src="/assets/logo.jpg"/>
 </div>
 <div>© 2026 KOMPASS gGmbH</div>
 </div>
