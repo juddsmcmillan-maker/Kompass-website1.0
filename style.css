@@ -353,50 +353,20 @@ li{margin-bottom:4px}
 .main .page ul, .main .page ol { list-style: none !important; padding-left: 0 !important; margin-left: 0 !important; }
 .main .page li::marker { content: ""; }
 
-/* 3) Stack all content blocks vertically (one on top of the other) */
+/* 3) Fix grid overlap: force a simple responsive grid */
 .main .page .grid,
 .main .page .cards,
 .main .page .features {
-  display: block !important;
-  grid-template-columns: none !important;
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 16px !important;
+  align-items: start !important;
 }
-.main .page .grid > *,
-.main .page .cards > *,
-.main .page .features > * {
-  width: 100% !important;
-  max-width: 100% !important;
-  margin: 0 0 24px 0 !important;
+@media (max-width: 700px){
+  .main .page .grid,
+  .main .page .cards,
+  .main .page .features { grid-template-columns: 1fr !important; }
 }
 
 /* 4) Kill any visible step/phase number badges */
 .phase-number, .step-number, .number, .step__number { display:none !important; }
-
-
-/* extra space above contact heading */
-.contact-spacer{height:32px}
-@media(max-width:768px){.contact-spacer{height:20px}}
-
-/* ============================================================
-   FINAL OVERRIDE: stack all content cards vertically + clean look
-   (placed last so it wins the cascade)
-   ============================================================ */
-.main .grid{
-  display:block !important;
-  grid-template-columns:none !important;
-}
-.main .grid > *{
-  display:block !important;
-  width:100% !important;
-  max-width:760px !important;
-  margin:0 0 22px 0 !important;
-  float:none !important;
-}
-/* clean, boxless look for these content cards */
-.main .card,
-.main .card.pad{
-  background:transparent !important;
-  border:0 !important;
-  border-radius:0 !important;
-  box-shadow:none !important;
-  padding:0 !important;
-}

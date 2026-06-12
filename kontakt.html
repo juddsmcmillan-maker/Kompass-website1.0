@@ -214,7 +214,7 @@ a:hover{text-decoration:underline}
 
 .grid{
   display:grid;
-  grid-template-columns:minmax(0,1.8fr) minmax(0,0.92fr);
+  grid-template-columns:1fr;
   gap:18px;
   align-items:start;
 }
@@ -310,6 +310,11 @@ li{margin-bottom:4px}
 .side-photo img{ display:block; }
 /* --------------------------------------------------------------- */
 
+
+/* stacked-clean-override */
+.grid{display:block !important;grid-template-columns:none !important;}
+.grid>*{display:block !important;width:100% !important;max-width:760px !important;margin:0 0 22px 0 !important;float:none !important;}
+.card,.card.pad{background:transparent !important;border:0 !important;border-radius:0 !important;box-shadow:none !important;padding:0 !important;}
 </style>
 </head>
 <body>
@@ -340,8 +345,7 @@ li{margin-bottom:4px}
   </div>
 
   <div class="section-block">
-    <div class="contact-spacer" aria-hidden="true"></div>
-<h2>Wofür Sie uns kontaktieren können</h2>
+    <h2>Wofür Sie uns kontaktieren können</h2>
     <div class="card-grid" style="margin-top:16px;">
       <div class="card"><h3>Aufnahme</h3><p>Anfragen für Jugendliche, Eltern, Jugendämter und Beratungsstellen.</p></div>
       <div class="card"><h3>Fachliche Anfragen</h3><p>Rückfragen von Jugendämtern, Kliniken, Schulen und Kooperationspartnern.</p></div>
