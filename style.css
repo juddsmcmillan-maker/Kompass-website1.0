@@ -353,19 +353,19 @@ li{margin-bottom:4px}
 .main .page ul, .main .page ol { list-style: none !important; padding-left: 0 !important; margin-left: 0 !important; }
 .main .page li::marker { content: ""; }
 
-/* 3) Fix grid overlap: force a simple responsive grid */
+/* 3) Stack all content blocks vertically (one on top of the other) */
 .main .page .grid,
 .main .page .cards,
 .main .page .features {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 16px !important;
-  align-items: start !important;
+  display: block !important;
+  grid-template-columns: none !important;
 }
-@media (max-width: 700px){
-  .main .page .grid,
-  .main .page .cards,
-  .main .page .features { grid-template-columns: 1fr !important; }
+.main .page .grid > *,
+.main .page .cards > *,
+.main .page .features > * {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 0 24px 0 !important;
 }
 
 /* 4) Kill any visible step/phase number badges */
