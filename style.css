@@ -375,3 +375,28 @@ li{margin-bottom:4px}
 /* extra space above contact heading */
 .contact-spacer{height:32px}
 @media(max-width:768px){.contact-spacer{height:20px}}
+
+/* ============================================================
+   FINAL OVERRIDE: stack all content cards vertically + clean look
+   (placed last so it wins the cascade)
+   ============================================================ */
+.main .grid{
+  display:block !important;
+  grid-template-columns:none !important;
+}
+.main .grid > *{
+  display:block !important;
+  width:100% !important;
+  max-width:760px !important;
+  margin:0 0 22px 0 !important;
+  float:none !important;
+}
+/* clean, boxless look for these content cards */
+.main .card,
+.main .card.pad{
+  background:transparent !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  padding:0 !important;
+}
