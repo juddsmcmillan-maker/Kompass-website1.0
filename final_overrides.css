@@ -132,3 +132,167 @@ a{color:var(--forest-700)!important;}
   .footer-inner{display:block!important;}
   .footer-links{margin-top:18px!important;}
 }
+
+
+/* =========================================================
+   User cleanup pass: brighter hero dogs + no fake text boxes
+   ========================================================= */
+.hero,
+.home .hero{
+  background:
+    linear-gradient(90deg,rgba(4,23,14,.64) 0%,rgba(4,23,14,.42) 34%,rgba(4,23,14,.10) 60%,rgba(4,23,14,0) 100%),
+    url('/assets/hero.jpg') center/cover no-repeat!important;
+}
+.hero-inner{
+  background:linear-gradient(90deg,rgba(4,23,14,.44),rgba(4,23,14,.20),rgba(4,23,14,0))!important;
+  padding:20px 24px!important;
+  border-radius:20px!important;
+}
+.hero-kicker,
+.hero .hero-kicker{
+  color:#fff8d8!important;
+  background:rgba(4,23,14,.58)!important;
+  border:1px solid rgba(255,255,255,.24)!important;
+  text-shadow:0 2px 8px rgba(0,0,0,.45)!important;
+}
+.hero-title,
+.hero-sub{
+  text-shadow:0 3px 18px rgba(0,0,0,.55)!important;
+}
+
+/* Reading content should not look or behave like inactive buttons */
+.card,
+.pad,
+.mini,
+.callout,
+.phase,
+.download-card,
+.cards .card,
+.card-grid .card,
+.values .card,
+.stats .card,
+.downloads .card,
+.features-grid .card,
+.spenden .card,
+.angebote .card,
+.konzept .card,
+.aufnahme .card,
+.jobs .card,
+.kontakt .card{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  transform:none!important;
+  transition:none!important;
+  cursor:default!important;
+}
+.card:hover,
+.pad:hover,
+.mini:hover,
+.callout:hover,
+.phase:hover,
+.download-card:hover,
+.cards .card:hover,
+.card-grid .card:hover,
+.values .card:hover,
+.stats .card:hover,
+.downloads .card:hover,
+.features-grid .card:hover,
+.spenden .card:hover,
+.angebote .card:hover,
+.konzept .card:hover,
+.aufnahme .card:hover,
+.jobs .card:hover,
+.kontakt .card:hover{
+  background:transparent!important;
+  background-image:none!important;
+  border-color:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+  text-decoration:none!important;
+  cursor:default!important;
+}
+
+/* Use quiet spacing and separators instead of boxes */
+.card,
+.pad,
+.mini,
+.callout,
+.phase,
+.download-card{
+  padding:16px 0!important;
+  margin-bottom:10px!important;
+}
+.card-grid .card,
+.cards .card,
+.values .card,
+.stats .card,
+.downloads .card{
+  padding:18px 0!important;
+  border-top:1px solid rgba(20,64,38,.14)!important;
+}
+.card-grid .card:first-child,
+.cards .card:first-child,
+.values .card:first-child,
+.stats .card:first-child,
+.downloads .card:first-child{
+  border-top:0!important;
+}
+.callout{
+  border-left:0!important;
+  border-top:1px solid rgba(20,64,38,.16)!important;
+  border-bottom:1px solid rgba(20,64,38,.10)!important;
+}
+
+/* Keep real actions clearly clickable */
+a.btn,
+.btn,
+.nav a,
+.instagram-big,
+.ig-pill,
+.pdf-list a{
+  cursor:pointer!important;
+}
+.pdf-list a{
+  background:linear-gradient(135deg,#ffffff,#eef5e6)!important;
+  border:1px solid rgba(20,64,38,.13)!important;
+  border-radius:18px!important;
+  box-shadow:0 10px 28px rgba(11,39,24,.08)!important;
+  padding:18px 20px!important;
+}
+
+/* Tables/lists should read cleaner, not like bubble cards */
+.section-block td,
+.section-block th{
+  background:transparent!important;
+  border-left:0!important;
+  border-right:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+
+@media(max-width:620px){
+  .hero-inner{padding:16px 14px!important;margin-left:0!important;}
+}
+
+/* Remove remaining decorative non-clickable boxes */
+.highlight,
+.contact-box,
+.instagram-card{
+  background:transparent!important;
+  background-image:none!important;
+  border:0!important;
+  box-shadow:none!important;
+  border-radius:0!important;
+  padding:16px 0!important;
+  cursor:default!important;
+}
+.highlight:hover,
+.contact-box:hover,
+.instagram-card:hover{
+  background:transparent!important;
+  box-shadow:none!important;
+  transform:none!important;
+}
